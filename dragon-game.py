@@ -71,9 +71,7 @@ while True :
     condition_lost=bool(b == dragon_x and d == dragon_y)
     condition_win=bool(b == scape_x and d == scap_y)
     if direction == "right":
-        print(b)
-        print(dimension_value)
-        if b<=(dimension_value*2):
+        if b<(dimension_value*2)-1:
             clear_screen()
             b=b+2 
             show_location(x,y)
@@ -98,7 +96,7 @@ while True :
             draw_box(b,d)
             continue
     elif direction == "down":
-        if d<=(dimension_value-1):
+        if d<(dimension_value-1):
             clear_screen()
             d=d+1
             draw_box(b,d)
