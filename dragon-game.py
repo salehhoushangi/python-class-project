@@ -53,6 +53,27 @@ def draw_box(i,row):
 def clear_screen():
     os.system('cls' if  os.name == 'nt' else 'clear')
 
+def move_guid():
+    if b >= (dimension_value*2)-1 and d<=0:
+        print("you can move LEFT,DOWN and Enter 'QUIT' to Exit Game ")
+    elif 1<=b<=(dimension_value*2)-1 and d<=0:
+        print("you can move RIGHT,LEFT,DOWN and Enter 'QUIT' to Exit Game ")
+    elif b<=1 and d<=0 :
+        print("you can move RIGHT,DOWN and Enter 'QUIT' to Exit Game")
+    elif b<=1 and d>=(dimension_value-1):
+        print("you can move UP , RIGHT and Enter 'QUIT' to Exit Game")
+    elif b<=1 and 0<=d<=(dimension_value-1):
+         print("you can move UP , RIGHT ,DOWN and Enter 'QUIT' to Exit Game")
+    elif 1<b<(dimension_value*2)-1 and d>=(dimension_value)-1:
+         print("you can move UP , LEFT, RIGHT and Enter 'QUIT' to Exit Game")
+    elif b>=(dimension_value*2)-1 and d>=(dimension_value)-1:
+        print("you can move UP , LEFT and Enter 'QUIT' to Exit Game")
+    elif b>=(dimension_value*2)-1 and 0<=d<=(dimension_value)-1 :
+        print("you can move UP , LEFT ,DOWN and Enter 'QUIT' to Exit Game")
+    else:
+        print('''you can move LEFT , RIGHT , DOWN ,UP
+                Enter 'QUIT' to Exit Game. ''')
+
 while True:
     d=random.randint(0,dimension_value-1)
     b = random.randint(1,dimension_value*2)
@@ -65,8 +86,7 @@ dragon_x,dragon_y = dragon_locate()
 scape_x,scape_y= scape_door()
 
 while True :
-    print('''you can move LEFT , RIGHT , DOWN ,UP
-    Enter 'QUIT' to Exit Game. ''')
+    move_guid()
     direction=input(" >>").lower()
     condition_lost=bool(b == dragon_x and d == dragon_y)
     condition_win=bool(b == scape_x and d == scap_y)
