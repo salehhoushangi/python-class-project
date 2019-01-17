@@ -7,7 +7,7 @@ g=0
 max_life=5
 curren_life=0
 random_index=random.randint(0,2)
-letter_box=('apple','benana','orange','mango','Strawberry','Pumpkin')
+letter_box=('apple','benana','orange','mango','strawberry','pumpkin')
 target_letter=letter_box[random_index]
 my_list= list(target_letter)
 #print(my_list)
@@ -40,7 +40,7 @@ while True:
     print(', '.join(wrong_char))
     print("")
     print_blanks()
-    user_input=input("enter your charecter:")
+    user_input=input("enter your charecter:").lower()
     check_char()
     if not '_' in blank :
         print("your mission has been successfully accomplished")
