@@ -1,7 +1,7 @@
 import random
 chars="abcdefghijklmnopqrstuvwxyz"
 number="0123456789"
-symbols="@#$%&*+-="
+symbols="@#$%&*+-=^"
 password=''
 username_list=[]
 def simple_password(password):
