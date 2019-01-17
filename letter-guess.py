@@ -3,18 +3,22 @@ import random
 wrong_char =[]
 my_list =[]
 blank=[]
-max_life=7
+g=0
+max_life=5
 curren_life=0
 random_index=random.randint(0,2)
-letter_box=('apple','benana','orange')
+letter_box=('apple','benana','orange','mango','Strawberry','Pumpkin')
 target_letter=letter_box[random_index]
 my_list= list(target_letter)
-print(my_list)
+#print(my_list)
 
 def print_blanks():
+    global g
     print_blanks=len(my_list)
     for i in range(print_blanks):
-        blank.append('_')
+        if g==0 : 
+            blank.append('_')
+    g+=1        
     print(' '.join(blank))    
 
 
@@ -30,22 +34,18 @@ def check_char():
         curren_life +=1
 
 while True:
-    print("your soul is {}/{}".format(curren_life,max_life ))
+    print("")
+    print("Can you guess what the fruit to be wrote?")
+    print("Maximum wrong Answer {}/{}".format(curren_life,max_life ))
     print(', '.join(wrong_char))
     print("")
     print_blanks()
     user_input=input("enter your charecter:")
     check_char()
     if not '_' in blank :
+        print("your mission has been successfully accomplished")
         break
     if  curren_life==max_life:
+        print("sorry you are Game over ")
+        print("The right answer is (({}))".format(target_letter))
         break
-            
-
-
-
-
-
-
-
-
